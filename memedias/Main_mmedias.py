@@ -43,6 +43,31 @@ import os
 
 pesos = Funcoes.Pesos()
 
+limParametros = {
+    "Provas": 
+                {"P1":              [0,     10],
+                 "P2":              [0,     10],
+                 "Psub":            [0,     10]}, 
+    "Trabalhos": 
+                {"T1":              [0,   10],
+                 "T2":              [0,   10],
+                 "T3":              [0,   10]}
+}
+l_a = {"Provas":{},"Trabalhos":{}}
+l_a["Provas"]["P1"] = input('P1')
+l_a["Provas"]["P2"] = input('P2')
+l_a["Trabalhos"]["T1"] = input('T1')
+l_a["Trabalhos"]["T2"] = input('T2')
+l_a["Trabalhos"]["T3"] = input('T3')
+
+for i in l_a:
+    for j in l_a[i]:
+        if l_a[i][j] != '':
+            l_a[i][j] = int(l_a[i][j])
+            limParametros[i][j][0] = l_a[i][j]
+            limParametros[i][j][1] = l_a[i][j]
+
+
 # Tempo de referência do inicio do processamento
 Init_Time = time.time()
 
@@ -50,20 +75,28 @@ Init_Time = time.time()
 count_gen = 1
 count_pop = 0
 SPE = []
+tempo = time.time()
 flagsPop = [0]*(len(Parametros.flags)+1)
 
 n=0
 while count_pop < (Parametros.pop):
+    if tempo - Init_Time >= 6:
+        count_gen = Parametros.gentot
+        if pesos[2] == "S":
+            print("Não tem salvação")
+        else:
+            print("Vai de sub")
+        break
     Vpop = {}
     # Atribuindo valores aleatórios aos parâmetros de projeto
     # npar = 0
     # while npar != Parametros.Nparam:
     #     Vpop[npar] = Funcoes.valor_param(Parametros.LimParamMin[npar], Parametros.LimParamMax[npar])
     #     npar = npar + 1
-    for i in Parametros.limParametros:
+    for i in limParametros:
         Vpop[i] = {}
-        for j in Parametros.limParametros[i]:
-            Vpop[i][j] = Funcoes.valor_param(Parametros.limParametros[i][j])
+        for j in limParametros[i]:
+            Vpop[i][j] = Funcoes.valor_param(limParametros[i][j])
     NotasVpop = Notas.notas(Vpop)
     #Calculando o Mérito
     Merito, flag = Funcoes.Merit(NotasVpop,pesos) 
@@ -75,6 +108,8 @@ while count_pop < (Parametros.pop):
         # print(count_pop, "Aviões")
         # print(flag)
         flagsPop[flag] += 1
+        tempo = time.time()
+        
 
         # if flag == 1:
         #     print("Erro 1")
@@ -104,7 +139,7 @@ while count_gen != (Parametros.gentot):
     #Matriz dos escolhidos
     ESC = Funcoes.selecters(BST, SAV)
     #Montagem dos descendentes
-    DES, flagsPop = Funcoes.descenders(ESC, pesos)
+    DES, flagsPop = Funcoes.descenders(ESC, pesos, limParametros)
     #Montando a nova matriz de população
     SPE = Funcoes.selecters(ESC, DES) 
     #Classificando a geração pelo Mérito
@@ -118,3 +153,11 @@ while count_gen != (Parametros.gentot):
 Final_Time = time.time()
 Process_Time = Final_Time - Init_Time
 print ("Tempo de Processamento: %.2f s" % Process_Time)
+if tempo - Init_Time<6:
+    print(SPE[0].P1)
+    print(SPE[0].P2)
+    print(SPE[0].T1)
+    print(SPE[0].T2)
+    print(SPE[0].T3)
+    print(SPE[0].Psub)
+    print(SPE[0].merito)

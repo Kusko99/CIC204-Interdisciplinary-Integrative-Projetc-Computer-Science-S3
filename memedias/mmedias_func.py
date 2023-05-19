@@ -33,7 +33,7 @@ def selecters(BST,SAV):
     return ESC
 
 #Montando a matriz dos descendentes
-def descenders(ESC, pesos):
+def descenders(ESC, pesos, limParametros):
     nescolh = round((Parametros.FraSel + Parametros.FraCom)*Parametros.pop)
     nfilhos = Parametros.pop - nescolh
     count_pop = 0
@@ -49,12 +49,12 @@ def descenders(ESC, pesos):
   
         #Cruzamento das informações genéticas
         Vpop = {}
-        for i in Parametros.limParametros:
+        for i in limParametros:
             Vpop[i] = {}
-            for j in Parametros.limParametros[i]:
+            for j in limParametros[i]:
                 ran = random.random()
                 if ran < Parametros.Mutate:
-                    Vpop[i][j] = valor_param(Parametros.limParametros[i][j])
+                    Vpop[i][j] = valor_param(limParametros[i][j])
                 elif ran < (Parametros.Mutate + Parametros.CrOver):
                     Vpop[i][j] = pai[i][j]
                 else:
@@ -94,7 +94,21 @@ def descenders(ESC, pesos):
     #         np.savetxt(f'Pop_gen_{count_gen}.txt', [list(vars(x).values())[1:] for x in SPE], delimiter=';')
 
 def Merit(Notas, pesos):
-    media = pesos[0]*((Notas.P1 + Notas.P2)/2) + pesos[1]*((Notas.T1+Notas.T2+Notas.T3)/3)
+    if pesos[2] == "S":
+        if Notas.Psub > Notas.P1 and Notas.Psub <= Notas.P2:
+            media = pesos[0]*((Notas.Psub + Notas.P2)/2) + pesos[1]*((Notas.T1+Notas.T2+Notas.T3)/3)
+
+        if Notas.Psub <= Notas.P1 and Notas.Psub > Notas.P2:
+            media = pesos[0]*((Notas.P1 + Notas.Psub)/2) + pesos[1]*((Notas.T1+Notas.T2+Notas.T3)/3)
+
+        if Notas.Psub > Notas.P1 and Notas.Psub > Notas.P2:
+            media = pesos[0]*(Notas.Psub) + pesos[1]*((Notas.T1+Notas.T2+Notas.T3)/3)
+        
+        if Notas.Psub <= Notas.P1 and Notas.Psub <= Notas.P2:
+            media = 0
+    
+    else:
+        media = pesos[0]*((Notas.P1 + Notas.P2)/2) + pesos[1]*((Notas.T1+Notas.T2+Notas.T3)/3)
 
     if media < 6:
         # Media muito baixa
@@ -102,15 +116,17 @@ def Merit(Notas, pesos):
     else:
         flag = 0
 
-    Mer = media
+    Mer = max((Notas.P1 + Notas.P2)/2 *0.8 + (Notas.T1+Notas.T2+Notas.T3)/3*0.2, Notas.Psub*0.8 + (Notas.T1+Notas.T2+Notas.T3)/2*0.2)
     return Mer, flag
 
 def Pesos():
     pesos = []
     prova = float(input("Insira o peso das provas em forma decimal (Por exemplo: 0.6), se não houver provas na matéria insira 0: "))
+    Psub = input("Pretende fazer Psub? S/N ")
     trabalhos = 1-prova
     pesos.append(prova)
     pesos.append(trabalhos)
+    pesos.append(Psub)
     return pesos
 
 def valor_param(x):
