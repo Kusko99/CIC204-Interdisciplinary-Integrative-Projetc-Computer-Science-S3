@@ -1,0 +1,162 @@
+CREATE DATABASE db_MauaNet;
+USE db_MauaNet;
+
+/* Lógico_1: */
+
+CREATE TABLE Aluno_Boletim (
+    Ra CHAR(10) PRIMARY KEY,
+    Nome VARCHAR(100),
+    Email VARCHAR(100),
+    Senha VARCHAR(100),
+    Coeficiente_De_Redimento INTEGER,
+    UNIQUE (Ra, Email, Senha)
+);
+
+CREATE TABLE GTL (
+	GTL CHAR1(10) PRIMARY KEY,
+    Grupo CHAR(02),
+    Turma CHAR(02),
+    Lab CHAR(02),
+    Curso VARCHAR(50),
+    Serie CHAR(02),
+    Ra CHAR(10) UNIQUE,
+	FOREIGN KEY (Ra) REFERENCES Aluno_Boletim(Ra)
+);
+
+CREATE TABLE Materia (
+    Nome VARCHAR(50),
+    Id_Materia CHAR(06) PRIMARY KEY UNIQUE,
+    Peso_Prova INTEGER,
+    Peso_Trabalho INTEGER
+);
+
+CREATE TABLE Professor (
+    RF CHAR(06) PRIMARY KEY UNIQUE,
+    Nome VARCHAR(100)
+);
+
+CREATE TABLE Boleto (
+    Valor INTEGER,
+    Referencia DATE,
+    N°_do_Documento INTEGER PRIMARY KEY,
+    Situacao BOOLEAN,
+    Vencimento DATE,
+    Divida INTEGER,
+    Ra CHAR(10),
+    UNIQUE (N°_do_Documento, Ra),
+	FOREIGN KEY (Ra) REFERENCES Aluno_Boletim(Ra)
+);
+
+CREATE TABLE PAE (
+    Ano INTEGER,
+    Atividade VARCHAR(100),
+    CH INTEGER,
+    Turma INTEGER,
+    Sem CHAR(01),
+    Id_PAE CHAR(06) PRIMARY KEY UNIQUE
+);
+
+CREATE TABLE Aula_PAE (
+	Hora_Inicio TIME,
+	Dia VARCHAR(30),
+    Hora_Fim TIME,
+    Id_PAE CHAR(06),
+	Sala CHAR(4),
+    FOREIGN KEY (Id_PAE) REFERENCES PAE(Id_PAE)
+);
+
+CREATE TABLE Nota (
+    valor INTEGER,
+    tipo VARCHAR(20),
+    cardinalidade VARCHAR(02),
+    Peso_Nota INTEGER,
+    Ra CHAR(10),
+    id_Materia CHAR(06),
+    PRIMARY KEY (Ra, id_Materia),
+    UNIQUE (Ra, id_Materia),
+    FOREIGN KEY (Ra) REFERENCES Aluno_Boletim(Ra),
+    FOREIGN KEY (id_Materia) REFERENCES Materia(Id_Materia)
+);
+
+CREATE TABLE Aula (
+    Dia VARCHAR(20),
+    Hora_Inicio TIME,
+    Hora_Fim TIME,
+    GTL CHAR(10),
+    Id_Materia CHAR(06),
+    TIpo CHAR(10),
+    Sala CHAR(4),
+    FOREIGN KEY (id_Materia) REFERENCES Materia(Id_Materia),
+    FOREIGN KEY (GTL) REFERENCES GTL(GTL)
+);
+
+CREATE TABLE PAE_Aluno (
+    Id_PAE CHAR(06),
+    Ra CHAR(10),
+    PRIMARY KEY (id_PAE, Ra),
+    UNIQUE (id_PAE, Ra),
+    FOREIGN KEY (Ra) REFERENCES Aluno_Boletim(Ra),
+    FOREIGN KEY (Id_PAE) REFERENCES PAE(Id_PAE)
+);
+
+INSERT INTO Aluno_Boletim (Ra, Nome, Email, Senha, Coeficiente_De_Redimento) 
+VALUES 
+	('19.00468-0', 'Kusko', '19.00468-0@maua.br', 'senhaaleatoriadokusko','8'),
+	('19.00358-3', 'Oliver', '19.00358-3-0@maua.br', 'senhaaleatoriadooliver','6'),
+	('22.04569-0', 'Louis', '22.04569-0@maua.br', 'senhaaleatoriadolouis','7');
+
+INSERT INTO GTL (GTL, Grupo, Turma, Lab, Curso, Serie, Ra)
+VALUES
+	('0101011302','01','01','01','13','02','19.00468-0'),
+	('0101021203','01','01','02','12','03','19.00358-3'),
+	('0102041601','01','02','04','16','01','22.04569-0');
+
+INSERT INTO Materia (Nome, Id_Materia, Peso_Prova, Peso_Trabalho)
+VALUES
+	('calculo para ciencia da computação','cic201','60','40'),
+	('eletronica analogica','ete202','70','30'),
+	('design e conhecimento','dsg142','50','50');
+
+INSERT INTO Professor (RF,Nome)
+VALUES
+	('04790','igor'),
+	('03589','Vitor'),
+	('04405','aparecido');
+
+INSERT INTO Boleto (Valor,Referencia,N°_do_Documento,Situacao,Vencimento,Divida,Ra)
+VALUES
+	(2000,'2023-05-01','0258258',TRUE,'2023-05-30',0,'19.00468-0'),
+	(3000,'2023-04-01','0139340',TRUE,'2023-04-30',1000,'19.00358-3'),
+	(1500,'2023-06-01','2534958',FALSE,'2023-06-30',5000,'22.04569-0');
+
+INSERT INTO PAE (Ano,Atividade,CH,Turma,Sem,Id_PAE)
+VALUES
+	(2010,'foguetemodelismo',40,01,'1','029345'),
+	(2019,'computação quântica',40,02,'1','948363'),
+	(2015,'planejamento financeiro pessoal',40,03,'2','456832');
+
+INSERT INTO Aula_PAE (Hora_Inicio,Dia,Hora_Fim,Id_PAE,Sala)
+VALUES
+	('13:10:00','quarta','14:50:00','029345','H103'),
+	('11:20:00','terça','13:00:00','948363','H303'),
+	('07:40:00','sabado','09:20:00','456832','A002');
+
+
+INSERT INTO Nota (valor,tipo,cardinalidade,Peso_Nota,Ra,id_Materia)
+VALUES
+	('4','prova','02',1,'19.00468-0','cic201'),
+	('7','trabalho','01',1,'19.00358-3','ete202'),
+	('8','prova','01',2,'22.04569-0','dsg142');
+
+
+INSERT INTO Aula (Dia,Hora_Inicio,Hora_Fim,GTL,Id_Materia,TIpo,Aula)
+VALUES
+	('segunda','13:10:00','14:50:00','0101011302','cic201','grupo','F150'),
+	('terça','07:40:00','09:20:00','0101021203','ete202','lab','M001'),
+	('quinta','11:20:00','13:00:00','0102041601','dsg142','turma','C004');
+
+INSERT INTO PAE_Aluno (Id_PAE,Ra)
+VALUES
+	('029345','19.00468-0'),
+	('948363','19.00358-3'),
+	('456832','22.04569-0');
