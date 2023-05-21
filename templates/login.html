@@ -9,14 +9,14 @@
     <link href="images/MAUA.jpeg" media="all" rel="stylesheet">
     <title>MAUAnet 3.0</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="../styles/loginStyles.css">
+    <link href="{{ url_for('static', filename='CSS/loginStyles.css' )}}" rel="stylesheet" type="text/css" />
     <!-- <script src='https://www.google.com/recaptcha/api.js'></script>  -->
     
 </head>
 
 <body>
     <header class="top">
-        <img id='logo' src="../images/logo-IMT-branco.png" alt="Logo IMT">
+        <img src="{{ url_for('static', filename='IMG/images/logo-IMT-branco.png') }}" alt="Logo Mauá Branco">
     </header>
 
     <article class="entrar">
