@@ -16,3 +16,6 @@ pip install flask
 link do figma:
 https://www.figma.com/file/dg7iz5vsfisnCts2MVkxGi/Untitled?type=design&node-id=8-33&t=rHGeLA4N3TakRjfx-0
 
+### Banco de Dados
+
+* Para rodar o banco de dados, faça o donwload do MySql Workbench, copie o codigo que está no arquivo SQL.txt e rode em seu banco de dados
