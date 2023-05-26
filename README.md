@@ -18,4 +18,4 @@ https://www.figma.com/file/dg7iz5vsfisnCts2MVkxGi/Untitled?type=design&node-id=8
 
 ### Banco de Dados
 
-* Para rodar o banco de dados, faça o donwload do MySql Workbench, copie o codigo que está no arquivo SQL.txt e rode em seu banco de dados
+* Para rodar o banco de dados, faça o donwload do MySql Workbench, copie o codigo que está no arquivo BancoDeDados.txt e rode em seu banco de dados
