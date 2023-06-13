@@ -13,7 +13,7 @@ CREATE TABLE Aluno_Boletim (
 );
 
 CREATE TABLE GTL (
-	GTL CHAR1(10) PRIMARY KEY,
+	GTL CHAR(10) PRIMARY KEY,
     Grupo CHAR(02),
     Turma CHAR(02),
     Lab CHAR(02),
@@ -149,7 +149,7 @@ VALUES
 	('8','prova','01',2,'22.04569-0','dsg142');
 
 
-INSERT INTO Aula (Dia,Hora_Inicio,Hora_Fim,GTL,Id_Materia,TIpo,Aula)
+INSERT INTO Aula (Dia,Hora_Inicio,Hora_Fim,GTL,Id_Materia,TIpo,Sala)
 VALUES
 	('segunda','13:10:00','14:50:00','0101011302','cic201','grupo','F150'),
 	('terça','07:40:00','09:20:00','0101021203','ete202','lab','M001'),
