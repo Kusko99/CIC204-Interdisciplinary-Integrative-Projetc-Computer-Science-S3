@@ -113,7 +113,11 @@ VALUES
 
 INSERT INTO Materia (Nome, Id_Materia, Peso_Prova, Peso_Trabalho)
 VALUES
-	('calculo para ciencia da computação','cic201','60','40'),
+	('Calculo para Ciencia da Computação','cic201','60','40'),
+    ('Física e Modelagem Computacional', 'cic202', '60','40'),
+    ('Algoritmos, Estrutura de Dados e Programação','cic203','50','50'),
+    ('Paradigmas e Linguagens de Programação','tti201','90','10'),
+    ('Desenvolvimento Ágil','tti202','50','50'),
 	('eletronica analogica','ete202','70','30'),
 	('design e conhecimento','dsg142','50','50');
 
@@ -151,7 +155,17 @@ VALUES
 
 INSERT INTO Aula (Dia,Hora_Inicio,Hora_Fim,GTL,Id_Materia,TIpo,Sala)
 VALUES
-	('segunda','13:10:00','14:50:00','0101011302','cic201','grupo','F150'),
+	('segunda','07:40:00','09:20:00','0101011302','cic201','grupo','F150'),
+    ('segunda','11:20:00','13:00:00','0101011302','cic201','turma','P10'),
+    ('terça','09:30:00','11:10:00','0101011302','cic202','lab','H203'),
+    ('terça','07:40:00','09:20:00','0101011302','cic202','grupo','J300'),
+    ('quinta','07:40:00','09:20:00','0101011302','cic203','grupo','H201'),
+    ('sexta','11:20:00','13:00:00','0101011302','cic203','lab','H333'),
+    ('sexta','09:30:00','11:10:00','0101011302','cic203','lab','H333'),
+    ('quarta','09:30:00','11:10:00','0101011302','tti202','lab','H101'),
+    ('quarta','07:40:00','09:20:00','0101011302','tti201','lab','E01'),
+    ('quinta','11:20:00','13:00:00','0101011302','tti201','grupo','H202'),
+    ('segunda','13:10:00','14:50:00','0101011302','cic203','grupo','F150'),
 	('terça','07:40:00','09:20:00','0101021203','ete202','lab','M001'),
 	('quinta','11:20:00','13:00:00','0102041601','dsg142','turma','C004');
 
