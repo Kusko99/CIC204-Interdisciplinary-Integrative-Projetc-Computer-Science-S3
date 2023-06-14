@@ -51,4 +51,8 @@ def pegar_dados(email):
     gtl = resul2[0][0] + resul2[0][1] + resul2[0][2]
     return nome,Ra,gtl
 
+@app.route('/boletim')
+def boletim():
+    return render_template('boletim.html')
+
 app.run(debug=True)
