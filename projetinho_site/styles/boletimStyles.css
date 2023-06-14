@@ -375,13 +375,13 @@ footer {
         /* box-sizing: border-box; */
         /* border-right: none; */
         border-radius: 30px;
-        border:1px solid black;
+        /* border:1px solid black; */
         
         
     }
 
     .tab button:last-child {
-        border:1px solid black;
+        /* border:1px solid black; */
         padding-right: none;
     }
 
