@@ -161,11 +161,10 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
     if tempo - Init_Time<6:
         return SPE[0]
 
-if __name__ == "__main__":
-    ui = CalcME(["", ""], ["4"], "2", "1", "sem_psub", "1", "0")
-    print(ui.P1)
-    print(ui.P2)
-    print(ui.Psub)
-    print(ui.T1)
-    print(ui.T2)
-    
+# if __name__ == "__main__":
+    # ui = CalcME(["", ""], ["4"], "2", "1", "sem_psub", "1", "0")
+    # print(ui.P1)
+    # print(ui.P2)
+    # print(ui.Psub)
+    # print(ui.T1)
+    # print(ui.T2)
