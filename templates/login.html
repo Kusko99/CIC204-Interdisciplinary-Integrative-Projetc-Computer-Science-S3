@@ -29,16 +29,16 @@
                 <b>(99.99999-9@maua.br)</b>. Caso seja seu primeiro acesso, <b>a senha inicial é o seu RG</b>.
             </p>
             <!-- FORMS VAI AQUI -->
-            <form class=LoginSenha action="">
+            <form class=LoginSenha action="{{url_for('autenticar')}}" method="POST">
                 
                 <div class="container1">
                     <div class="row">
                         <p class="email">E-mail:</p>
-                        <input type="text" placeholder="exemplo@maua.br" class="login">
+                        <input type="text" placeholder="exemplo@maua.br" class="login" name="email">
                     </div>
                     <div class="row">
                         <p class="senha">Senha:</p>
-                        <input type="password" class="password">
+                        <input type="password" class="password" name="senha">
                     </div>
                     <!-- <div class="notRobot">
                         Autenticador de não sou um robô 
