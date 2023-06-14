@@ -126,7 +126,7 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
 
     #Classificando a primeira geração pelo Mérito
     SPE = np.array(SPE)
-    print("Tudo certo chefia")
+
 
     SPE = sorted(SPE, key=lambda x: x.merito, reverse=Parametros.maximizar)
 
