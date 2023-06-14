@@ -18,7 +18,7 @@
         <h1 class="title-page">{{nome_materia}}</h1>
         <p>Peso Prova: {{peso_prova}}</p>
         <p>Peso Trabalho: {{peso_trabalho}}</p>
-        <form action="{{ url_for('minimo_esforco') }}" method="POST">
+        <form action="{{ url_for('minimo_esforco',nome_materia=nome_materia,peso_prova=peso_prova,peso_trabalho=peso_trabalho) }}" method="POST">
             {% for i in range(quantidade_prova) %}
             <p>P{{i+1}}</p>
             <input type="number" name="input_prova{{i}}" id="prova{{i}}">
