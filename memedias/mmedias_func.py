@@ -94,6 +94,8 @@ def descenders(ESC, limParametros, Psub, QuantidadeTrabalhos, PesoProva, PesoTra
     #         np.savetxt(f'Pop_gen_{count_gen}.txt', [list(vars(x).values())[1:] for x in SPE], delimiter=';')
 
 def Merit(Notas, Psub, QuantidadeTrabalhos, PesoProva, PesoTrabalho):
+    if QuantidadeTrabalhos  == 0:
+        QuantidadeTrabalhos =1
     if Psub == "com_psub":
         if Notas.Psub > Notas.P1 and Notas.Psub <= Notas.P2:
             media = float(PesoProva)*((Notas.Psub + Notas.P2)/2) + float(PesoTrabalho)*((Notas.T1+Notas.T2)/int(QuantidadeTrabalhos))
