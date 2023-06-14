@@ -59,13 +59,16 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
         limParametros["Provas"]["P2"][0] = int(NotasProva[1])
         limParametros["Provas"]["P2"][1] = int(NotasProva[1])
     print(len(NotasTrabalho))
-    if len(NotasTrabalho) != 0:
+    if QuantidadeTrabalhos != 0:
         if NotasTrabalho[0] != "":
             limParametros["Trabalhos"]["T1"][0] = int(NotasTrabalho[0])
             limParametros["Trabalhos"]["T1"][1] = int(NotasTrabalho[0])
         if NotasTrabalho[1] != "":
             limParametros["Trabalhos"]["T2"][0] = int(NotasTrabalho[1])
             limParametros["Trabalhos"]["T2"][1] = int(NotasTrabalho[1])
+    elif  QuantidadeTrabalhos == 1:
+            limParametros["Trabalhos"]["T2"][0] = 0
+            limParametros["Trabalhos"]["T2"][1] = 0
     else:
             limParametros["Trabalhos"]["T1"][0] = 0
             limParametros["Trabalhos"]["T1"][1] = 0
