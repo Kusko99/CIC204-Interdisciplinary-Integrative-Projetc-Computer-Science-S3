@@ -33,7 +33,7 @@ header.top > img#logo{
 
 /* fim titulo da pagina de materias */
 
-/* inicio media e minimo esforço */
+/* inicio do Body */
 .container {
     display: flex;
     justify-content: center;
@@ -56,16 +56,18 @@ header.top > img#logo{
     }
 }
 
-/* fim media e minimo esforco */
+/* fim do Body */
 
 /* inicio de footer */
 footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     font-size: medium;
     background-color: #004684;
-    width: auto;
     color: #E6E6E6;
     text-align: center;
-    margin-top: auto;
+    padding: 10px;
 }
 
 

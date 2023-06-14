@@ -61,3 +61,79 @@ def get_nome_id_materias(lista_ids):
 
     return lista_nomes
 
+def get_peso_prova(id_materia):
+    db_connection = connection.MySQLConnection(host=host, user=user, password=password,database=database)
+    cursor = db_connection.cursor()
+
+    query = "SELECT Peso_Prova FROM Materia WHERE Id_Materia = (%s)"
+    values = (id_materia,)
+    cursor.execute(query,values)
+    resultado = cursor.fetchall()
+
+    cursor.close()
+    db_connection.commit()
+    db_connection.close()
+
+    return resultado[0][0]
+
+def get_peso_trabalho(id_materia):
+    db_connection = connection.MySQLConnection(host=host, user=user, password=password,database=database)
+    cursor = db_connection.cursor()
+
+    query = "SELECT Peso_Trabalho FROM Materia WHERE Id_Materia = (%s)"
+    values = (id_materia,)
+    cursor.execute(query,values)
+    resultado = cursor.fetchall()
+
+    cursor.close()
+    db_connection.commit()
+    db_connection.close()
+
+    return resultado[0][0]
+
+
+def get_quantidade_prova(id_materia):
+    db_connection = connection.MySQLConnection(host=host, user=user, password=password,database=database)
+    cursor = db_connection.cursor()
+
+    query = "SELECT Quantidade_Prova FROM Materia WHERE Id_Materia = (%s)"
+    values = (id_materia,)
+    cursor.execute(query,values)
+    resultado = cursor.fetchall()
+
+    cursor.close()
+    db_connection.commit()
+    db_connection.close()
+
+    return resultado[0][0]
+
+def get_quantidade_trabalho(id_materia):
+    db_connection = connection.MySQLConnection(host=host, user=user, password=password,database=database)
+    cursor = db_connection.cursor()
+
+    query = "SELECT Quantidade_Trabalho FROM Materia WHERE Id_Materia = (%s)"
+    values = (id_materia,)
+    cursor.execute(query,values)
+    resultado = cursor.fetchall()
+
+    cursor.close()
+    db_connection.commit()
+    db_connection.close()
+
+    return resultado[0][0]
+
+def get_id_materia_nome(nome_materia):
+    db_connection = connection.MySQLConnection(host=host, user=user, password=password,database=database)
+    cursor = db_connection.cursor()
+
+    query = "SELECT Id_Materia FROM Materia WHERE Nome  = (%s)"
+    values = (nome_materia,)
+    cursor.execute(query,values)
+    resultado = cursor.fetchall()
+
+    cursor.close()
+    db_connection.commit()
+    db_connection.close()
+
+    return resultado[0][0]
+
