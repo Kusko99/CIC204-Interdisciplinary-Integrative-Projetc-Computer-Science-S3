@@ -69,7 +69,7 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
         if int(QuantidadeTrabalhos)>1 and NotasTrabalho[1] != "":
             limParametros["Trabalhos"]["T2"][0] = int(NotasTrabalho[1])
             limParametros["Trabalhos"]["T2"][1] = int(NotasTrabalho[1])
-    elif  int(QuantidadeTrabalhos) == 1:
+        if  int(QuantidadeTrabalhos) == 1:
             limParametros["Trabalhos"]["T2"][0] = 0
             limParametros["Trabalhos"]["T2"][1] = 0
     else:
@@ -166,5 +166,5 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
         return {"P1": SPE[0].P1, "P2": SPE[0].P2, "Psub":SPE[0].Psub, "T1": SPE[0].T1, "T2": SPE[0].T2}
 
 if __name__ == "__main__":
-    u_i = CalcME(["", ""], [], "2", "0", "sem_psub", "100", "0")
+    u_i = CalcME(["", ""], ["10"], "2", "1", "sem_psub", "50", "50")
     print(u_i)
