@@ -14,15 +14,47 @@
     <header class="top">
         <img src="{{ url_for('static', filename='IMG/Branco_Branco.png') }}" alt="Logo Mauá Branco" id="logo-mmedias">
     </header>
-    <div class="container">
-        <div class="row">
-            {% for materia in materias %}
-            <div class="col-md-4">
-                <a href="{{ url_for('info_materia', nome_materia=materia) }}" class="btn custom-button">{{ materia }}</a>
+    <article>
+        <div id="dadosPessoais">
+            <h1 id="mauanet">MMedias</h1>
+            <div>
+                <div>
+                    <p class="dados">Nome:</p>
+                    <p id="nome">Fernando Freitas de Oliveira</p>
+                </div>
+                <div>
+                    <p class="dados">E-mail:</p>
+                    <p id="email">19.00468-0@maua.br</p>
+                </div>
+                <div>
+                    <p class="dados">Celular:</p>
+                    <p id="celular">(11)94002-8922</p>
+                </div>
+                <div>
+                    <p class="dados">RA:</p>
+                    <p id="RA">19.00468-0</p>
+                </div>
+                <div>
+                    <p class="dados">Grupo/Turma/Lab:</p>
+                    <p id="GTL">1/1/1</p>
+                </div>
             </div>
-            {% endfor %}
         </div>
-    </div>
+
+
+        <h2>Materias</h2>
+
+        <div class="container">
+            <div class="row">
+                {% for materia in materias %}
+                <div class="col-md-4">
+                    <a href="{{ url_for('info_materia', nome_materia=materia) }}" class="btn custom-button">{{ materia
+                        }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
 
     <footer>
         <p>
