@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMedias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="{{ url_for('static', filename='CSS/menuStyles.css' )}}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='CSS/materiaStyles.css' )}}" rel="stylesheet" type="text/css" />
+    <title>Materia</title>
 </head>
 
 <body>
     <header class="top">
         <img src="{{ url_for('static', filename='IMG/Branco_Branco.png') }}" alt="Logo Mauá Branco" id="logo-mmedias">
     </header>
-    <div class="container">
-        <div class="row">
-            {% for materia in materias %}
-            <div class="col-md-4">
-                <a href="{{ url_for('info_materia', nome_materia=materia) }}" class="btn custom-button">{{ materia }}</a>
-            </div>
-            {% endfor %}
+    <div>
+        <h1 class="title-page">{{nome_materia}}</h1>
+        <div class="container">
+            <p class="col-1 align-self-center">Media: </p>
+            <p class="col-2 align-self-center"> 10,0 </p>
+            <button class="col-4 align-self-center">
+                <img src="{{ url_for('static', filename='IMG/minimo-esforco.png') }}" alt="Ícone Mínimo Esforço"
+                    style="width: 1em; height: 1em;">
+                Mínimo Esforço
+            </button>
         </div>
     </div>
-
     <footer>
         <p>
             © Instituto Mauá de Tecnologia, 2023 - Todos os direitos reservados.
         </p>
     </footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
 
 </html>
