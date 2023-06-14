@@ -69,4 +69,3 @@ def conexaoDB_Notas(Ra):
     db_connection.close()
     
     return(resultado)
-
