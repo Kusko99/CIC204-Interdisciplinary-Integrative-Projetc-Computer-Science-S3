@@ -16,37 +16,28 @@
     </header>
     <div>
         <h1 class="title-page">{{nome_materia}}</h1>
-        <div class="container">
-            <p class="col-1 align-self-center">Media: </p>
-            <p class="col-2 align-self-center"> 10,0 </p>
-            <button class="col-4 align-self-center">
-                <img src="{{ url_for('static', filename='IMG/minimo-esforco.png') }}" alt="Ícone Mínimo Esforço"
-                    style="width: 1em; height: 1em;">
-                Mínimo Esforço
-            </button>
-        </div>
         <p>Peso Prova: {{peso_prova}}</p>
         <p>Peso Trabalho: {{peso_trabalho}}</p>
-        <div>
+        <form action="{{ url_for('minimo_esforco') }}" method="POST">
             {% for i in range(quantidade_prova) %}
-            <p>P{{ i+1 }}</p>
-            <input type="text" name="input{{ i }}" id="input{{ i }}">
+            <p>P{{i+1}}</p>
+            <input type="number" name="input_prova{{i}}" id="prova{{i}}">
             {% endfor %}
-        </div>
-        <p>Quer fazer Psub?</p>
-        <input type="radio" name="psub" value="com_psub">Sim<br>
-        <input type="radio" name="psub" value="sem_psub">Não<br>
-        <div>
             {% for i in range(quantidade_trabalho) %}
-            <p>T{{ i+1 }}</p>
-            <input type="text" name="input{{ i }}" id="input{{ i }}">
+            <p>T{{i+1}}</p>
+            <input type="number" name="input_trabalho{{i}}" id="trabalho{{i}}">
             {% endfor %}
-        </div>
+            <p>Quer fazer Psub?</p>
+            <label><input type="radio" name="psub" value="com_psub">Sim</label>
+            <label><input type="radio" name="psub" value="sem_psub">Não</label>
+            <button class="col-4 align-self-center" type="submit">
+                <img src="{{ url_for('static', filename='IMG/minimo-esforco.png') }}" alt="Ícone Mínimo Esforço"
+                    style="width: 1em; height: 1em;"> Mínimo Esforço
+            </button>
+        </form>
     </div>
     <footer>
-        <p>
-            © Instituto Mauá de Tecnologia, 2023 - Todos os direitos reservados.
-        </p>
+        <p>© Instituto Mauá de Tecnologia, 2023 - Todos os direitos reservados.</p>
     </footer>
 </body>
 
