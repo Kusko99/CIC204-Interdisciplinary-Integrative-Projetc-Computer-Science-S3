@@ -46,7 +46,7 @@ def minimo_esforco(nome_materia,peso_prova,peso_trabalho):
             inputs_trabalho.append(input_trabalho)
         
         theodoro_senpai = Main_mmedias.CalcME(inputs_prova,inputs_trabalho,quantidade_prova,quantidade_trabalho,psub,peso_prova,peso_trabalho)
-        print(dir(theodoro_senpai))
+        print(theodoro_senpai)
         # p1 = theodoro_senpai.P1
         # p2 = theodoro_senpai.P2
         # psub == -1

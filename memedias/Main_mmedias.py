@@ -90,7 +90,7 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
 
     n=0
     while count_pop < (Parametros.pop):
-        if tempo - Init_Time >= 6:
+        if tempo - Init_Time >= 6000:
             count_gen = Parametros.gentot
             if Psub == "com_psub":
                 print("Não tem salvação")
@@ -161,8 +161,9 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
         # Funcoes.displayar(SPE, count_gen, flagsPop)
 
     Final_Time = time.time()
-
-    return {"P1": SPE[0].P1, "P2": SPE[0].P2, "Psub":SPE[0].Psub, "T1": SPE[0].T1, "T2": SPE[0].T2}
+    if tempo - Init_Time<6:
+        
+        return {"P1": SPE[0].P1, "P2": SPE[0].P2, "Psub":SPE[0].Psub, "T1": SPE[0].T1, "T2": SPE[0].T2}
 
 if __name__ == "__main__":
     u_i = CalcME(["", ""], [], "2", "0", "sem_psub", "100", "0")
