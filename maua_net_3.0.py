@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import ConecaoDB
 
 app = Flask(__name__)
-app.secret_key = 'alura'
+app.secret_key = 'mauanet'
 
 @app.route("/")
 def login():

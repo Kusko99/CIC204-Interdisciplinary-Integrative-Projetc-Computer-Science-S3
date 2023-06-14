@@ -1,8 +1,8 @@
 from mysql.connector import connection
 
-host = 'localhost'
-user = 'root'
-password = 'portuguesa1'
+host ='localhost'
+user ='user'
+password = 'password'
 database = 'db_MauaNet'
 
 def get_GTL_aluno(ra):
@@ -19,6 +19,7 @@ def get_GTL_aluno(ra):
     db_connection.close()
 
     return resultados[0][0]
+
 
 def get_GTL_id_Materias(gtl):
     db_connection = connection.MySQLConnection(host=host, user = user, password = password, database=database)

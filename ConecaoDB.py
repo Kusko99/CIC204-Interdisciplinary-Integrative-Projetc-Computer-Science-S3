@@ -1,7 +1,6 @@
 from mysql.connector import connection
 
 host ='localhost'
-port='3306'
 user ='user'
 password = 'password'
 database = 'db_MauaNet'
