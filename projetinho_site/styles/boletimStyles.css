@@ -1,0 +1,389 @@
+body {
+    font-family: "Montserrat", 'Times New Roman', Times, serif, Helvetica, sans-serif, sans-serif;
+    font-size: medium;
+    margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: none;
+    background-color: #E6E6E6;
+}
+
+
+header.top {
+    display: block;
+    padding: 5px;
+    border: solid #004684 1px;
+    background-color: #004684;
+}
+
+header.top>img#logo {
+    display: inline;
+    width: 172px;
+    height: 80px;
+    padding: 1px;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+/* reutilizar!!!!! */
+header.top>p {
+    /* Para evitar quebra de linha de texto*/
+    white-space: nowrap;
+    font-family: 'montserrat', Times, serif;
+    font-size: xx-large;
+    color: #E6E6E6;
+    display: inline;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+    border: 1px dashed black;
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1#boletim {
+    display: block;
+    color: #004684;
+    font-size: xx-large;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div#dadosPessoais>div {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div#dadosPessoais>div>div {
+    display: table-row;
+    text-align: left;
+    margin: 5px;
+    text-align: center;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+div#dadosPessoais>div>div>p {
+    display: table-cell;
+    font-size: medium;
+    font-weight: lighter;
+    padding: 10px;
+    text-align: left;
+}
+
+div#dadosPessoais>div>div>p.dados {
+    font-weight: bold;
+    text-align: center;
+}
+
+div.container>a#voltar {
+    display: inline-block;
+    font-size: medium;
+    text-align: center;
+    background-color: #004684;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 5px;
+    background-color: rgb(80, 80, 80);
+    width: 160px;
+}
+
+div.boletim {
+    overflow-x: auto;
+    text-align: center;
+}
+
+div.boletim>table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+
+}
+
+
+
+
+
+
+
+
+/* adicionando tabs nas tabelas */
+.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #004684;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.tab button {
+    color:#E6E6E6;
+    font-family: 'montserrat';
+    font-size: medium;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 16px;
+    width: calc(100%/3);
+    font-weight: bolder;
+    box-sizing: border-box;
+    border-right: 1px solid #000000;
+    
+    background-color: #004684;
+    color:#e6e6e6;
+}
+
+.tab button:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+
+.tab button:hover {
+    color:black;
+    filter: brightness(190%);
+    
+    
+    
+}
+
+.tab button.active {
+    color:black;
+    filter:brightness(190%);
+   
+    
+}
+
+.boletim {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s;
+    /* Fading effect takes 1 second */
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+td,
+tr,
+th {
+    font-size: medium;
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
+th {
+    color: #E6E6E6;
+    background-color: #004684;
+}
+
+tr:nth-child(even) {
+    background-color: #dcdcdc;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 0, 0.535);
+}
+
+
+a#voltar:hover {
+    filter: brightness(170%);
+    color: #E6E6E6;
+    /* border: 1px solid #004684; */
+    box-shadow: 1px 1px 1px black;
+    text-shadow: none;
+}
+
+td.disciplina {
+    text-align: left;
+}
+
+footer {
+    font-size: medium;
+    background-color: #004684;
+    width: auto;
+    color: #E6E6E6;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+    body{
+        font-size:smaller;
+        
+    }
+    border {
+        min-height: auto;
+    }
+
+    /* inicio de header */
+    header.top>img#logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* fim de header */
+
+    /* inicio de article */
+    div#dadosPessoais>div,
+    div#dadosPessoais>div>div {
+        display: block;
+    }
+
+    div#dadosPessoais {
+        display: block;
+        /* border: 1px solid red; */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    div#dadosPessoais>div>div>p {
+        display: block;
+        margin: 5px;
+        text-align: center;
+        margin-top: 0px;
+        font-weight: bold;
+        font-size: medium;
+        background-color: transparent;
+        padding: 0px;
+        border: none;
+        color: black;
+    }
+
+    div#dadosPessoais>div>div>p.dados {
+        margin-bottom: 0px;
+    }
+
+    div#dadosPessoais>div>div>p#RA,
+    #dadosPessoais>div>div>p#GTL,
+    #dadosPessoais>div>div>p#nome,
+    #dadosPessoais>div>div>p#email,
+    #dadosPessoais>div>div>p#celular {
+        padding-left: 10%;
+        padding-right: 10%;
+        font-size: medium;
+        font-weight: lighter;
+        word-break: break-all;
+    }
+
+
+    div.container>a#voltar{
+        display: block;
+        font-size: larger;
+        text-align: center;
+        margin: 10px 5%;
+        padding: 15px;
+        text-decoration: none;
+        border-radius: 30px;
+        width: auto;
+    }
+
+    /* .tab{
+        border-radius: 30px;
+       
+        background-color: transparent;
+        
+    }
+
+    .tab button {
+        margin-top: 10px;
+        width:100%;
+        font-size: medium;
+        font-weight: bolder;
+        text-align: center;
+        border-radius: 30px;
+        border: 1px solid black;
+    } */
+
+
+
+    .tab {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* overflow:hidden; */
+        border: none;
+        background-color: transparent;
+        /* text-align: center; */
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:5%;
+        border-radius: 0;
+        
+    }
+    
+    .tab button {
+        text-align: center;
+        border: none;
+        /* font-family: 'montserrat';
+        font-size: medium; */
+        background-color: #004684;
+        /* float: center; */
+        /* border: none; */
+        /* outline: none; */
+        /* cursor: pointer; */
+        margin: 5px;
+        padding: 15px;
+        width: 90%;
+        font-weight: bolder;
+        /* box-sizing: border-box; */
+        /* border-right: none; */
+        border-radius: 30px;
+        border:1px solid black;
+        
+        
+    }
+
+    .tab button:last-child {
+        border:1px solid black;
+        padding-right: none;
+    }
+
+    /* fim de article */
+}

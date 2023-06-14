@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="../styles/boletimStyles.css">
+    <script src="../scripts/boletimScripts.js"></script>
+
+    <title>MAUAnet 3.0 - Boletim</title>
+</head>
+
+<body>
+    <header class="top">
+        <img id='logo' src="../images/logo-IMT-branco.png" alt="Logo IMT">
+    </header>
+    <article>
+        <div id="dadosPessoais">
+            <h1 id="boletim">BOLETIM</h1>
+            <div>
+                <div>
+                    <p class="dados">Nome:</p>
+                    <p id="nome">Bruno Kenji Barros Teruya</p>
+                </div>
+                <div>
+                    <p class="dados">E-mail:</p>
+                    <p id="email">brunoteruya_@outlook.com</p>
+                </div>
+                <div>
+                    <p class="dados">Celular:</p>
+                    <p id="celular">(11)94002-8922</p>
+                </div>
+                <div>
+                    <p class="dados">RA:</p>
+                    <p id="RA">22.01053-0</p>
+                </div>
+                <div>
+                    <p class="dados">Grupo/Turma/Lab:</p>
+                    <p id="GTL">1/1/1</p>
+                </div>
+            </div>
+            <div class="container">
+                <a id="voltar" href="../html/home.html">Voltar</a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="tab">
+            <button class="tablinks" onclick="abraNotas(event, 'provas')"  id="defaultOpen">Provas</button>
+            <button class="tablinks" onclick="abraNotas(event, 'trabalhos')">Trabalhos</button>
+            <button class="tablinks" onclick="abraNotas(event, 'medias')">Médias</button>
+        </div>
+
+
+
+
+
+
+        <!-- provas -->
+        <div id="provas" class="boletim">
+            <table>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Semestralidade</th>
+                    <th>Série</th>
+                    <th>Período</th>
+                    <th>P1</th>
+                    <th>P2</th>
+                    <th>PS1</th>
+                    <th>P3</th>
+                    <th>P4</th>
+                    <th>PS2</th>
+                    <th>MP</th>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC201 - Cálculo para Ciência da Computação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC202 - Física e Modelagem Computacional</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC203 - Algoritmos, Estrutura de Dados e Programação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC204 - Proj Integr Interdisciplinar-Ciência da Computação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC205 - Álgebra Linear e Geometria Análitica</td>
+                    <td class="semestralidade">S2</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC206 - Teoria da Comput., Autômatos e Linguagens Formais</td>
+                    <td class="semestralidade">S2</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">PAE3CC - Projetos e Atividades Especiais III</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="p1">9,0</td>
+                    <td class="p2">5,0</td>
+                    <td class="ps1">10,0</td>
+                    <td class="p3"></td>
+                    <td class="p4"></td>
+                    <td class="ps2"></td>
+                    <td class="mp"></td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <!-- trabalhos -->
+        <div id="trabalhos" class="boletim">
+            <table>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Semestralidade</th>
+                    <th>Série</th>
+                    <th>Período</th>
+                    <th>T1</th>
+                    <th>T2</th>
+                    <th>T3</th>
+                    <th>T4</th>
+                    <th>T5</th>
+                    <th>T6</th>
+                    <th>T7</th>
+                    <th>T8</th>
+                    <th>T9</th>
+                    <th>T10</th>
+                    <th>T11</th>
+                    <th>T12</th>
+                    <th>T13</th>
+                    <th>T14</th>
+                    <th>T15</th>
+                    <th>T16</th>
+                    <th>MT</th>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC201 - Cálculo para Ciência da Computação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC202 - Física e Modelagem Computacional</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC203 - Algoritmos, Estrutura de Dados e Programação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC204 - Proj Integr Interdisciplinar-Ciência da Computação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC205 - Álgebra Linear e Geometria Análitica</td>
+                    <td class="semestralidade">S2</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC206 - Teoria da Comput., Autômatos e Linguagens Formais</td>
+                    <td class="semestralidade">S2</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">PAE3CC - Projetos e Atividades Especiais III</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="t1">9,0</td>
+                    <td class="t2">5,0</td>
+                    <td class="t3">10,0</td>
+                    <td class="t4"></td>
+                    <td class="t5"></td>
+                    <td class="t6"></td>
+                    <td class="t7"></td>
+                    <td class="t8"></td>
+                    <td class="t9"></td>
+                    <td class="t10"></td>
+                    <td class="t11"></td>
+                    <td class="t12"></td>
+                    <td class="t13"></td>
+                    <td class="t14"></td>
+                    <td class="t15"></td>
+                    <td class="t16"></td>
+                    <td class="mt"></td>
+            </table>
+        </div>
+
+
+
+
+        <!-- medias -->
+        <div id="medias" class="boletim">
+            <table>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Semestralidade</th>
+                    <th>Série</th>
+                    <th>Período</th>
+                    <th>Média de Trabalhos</th>
+                    <th>Média de Provas</th>
+                    <th>Média Final</th>
+                    <th>Situação</th>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC201 - Cálculo para Ciência da Computação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC202 - Física e Modelagem Computacional</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC203 - Algoritmos, Estrutura de Dados e Programação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC204 - Proj Integr Interdisciplinar-Ciência da Computação</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC205 - Álgebra Linear e Geometria Análitica</td>
+                    <td class="semestralidade">S2</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">CIC206 - Teoria da Comput., Autômatos e Linguagens Formais</td>
+                    <td class="semestralidade">S2</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                </tr>
+                <tr>
+                    <td class="disciplina">PAE3CC - Projetos e Atividades Especiais III</td>
+                    <td class="semestralidade">S1</td>
+                    <td class="serie">2ª</td>
+                    <td class="periodo">M</td>
+                    <td class="mediaDeTrabalhos">9,0</td>
+                    <td class="mediaDeProvas">5,0</td>
+                    <td class="mediaFinal">10,0</td>
+                    <td class="situacao"></td>
+                </tr>
+            </table>
+        </div>
+
+
+
+
+
+    </article>
+    <footer>
+        <p>
+            © Instituto Mauá de Tecnologia, 2023 - Todos os direitos reservados.
+        </p>
+    </footer>
+
+
+    <script>
+        document.getElementById("defaultOpen").click();
+    </script>
+    
+</body>
+
+</html>
