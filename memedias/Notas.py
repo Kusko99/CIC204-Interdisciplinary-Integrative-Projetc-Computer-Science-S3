@@ -1,4 +1,3 @@
-import mmedias_parametros as param
 class notas:
     def __init__(self, dicionarioNotas=''):
         if dicionarioNotas != '':
