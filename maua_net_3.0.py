@@ -16,6 +16,18 @@ def login_aux():
 def home():
     return render_template("home.html")
 
+@app.route("/home2")
+def home2():
+    email = session.get('email')
+    nome = session.get('nome')
+    ra = session.get('ra')
+    gtl = session.get('gtl')
+    return redirect(url_for('mostrar_nome', email=email, nome=nome, ra=ra, gtl=gtl))
+
+@app.route("/mapa")
+def mapa():
+    return render_template("mapa.html")
+
 @app.route("/boletim")
 def boletim():
     email = session.get('email')
@@ -23,7 +35,7 @@ def boletim():
     ra = session.get('ra')
     gtl = session.get('gtl')
     resul3 = ConecaoDB.conexaoDB_Notas(ra)
-    return redirect(url_for('mostrar_nome2', email=email, nome=nome, ra=ra, gtl=gtl, nota1=nota1))
+    return redirect(url_for('mostrar_nome2', email=email, nome=nome, ra=ra, gtl=gtl))
 
 @app.route('/autenticar', methods=['POST'])
 def autenticar():
