@@ -178,17 +178,20 @@ div#titulo-materias > div.col-md-4 {
 
 /* fim do botão da materia */
 
-/* inicio de footer */
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: medium;
-    background-color: #004684;
-    color: #E6E6E6;
-    text-align: center;
-    padding: 10px;
+
+
+@media(max-width: 280px){
+    body{
+        font-size:smaller;
+        word-break: break-all;
+    }
+    
+    header.top > img#logo{
+        width: 60%;
+        height: 60%;   
+    }
+    div#dadosPessoais > div > div > p#RA, #dadosPessoais > div > div > p#GTL, #dadosPessoais > div > div > p#nome, #dadosPessoais > div > div > p#email, #dadosPessoais > div > div > p#celular, .dados{
+        word-break: break-all; 
+    }
+
 }
-
-
-/* fim de footer */

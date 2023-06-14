@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,23 +19,27 @@
     </header>
     <div class="container">
         <h1 class="title-page">{{nome_materia}}</h1>
-        <p class="mb-3">Peso Prova: {{peso_prova}}</p>
-        <p class="mb-3">Peso Trabalho: {{peso_trabalho}}</p>
+    </div>
+    <div class="container">
+        <p class="mb-3 pesos">Peso Prova: {{peso_prova}}</p>
+        <p class="mb-3 pesos">Peso Trabalho: {{peso_trabalho}}</p>
+    </div>
+    <div class="container">
         <form action="{{ url_for('minimo_esforco', nome_materia=nome_materia, peso_prova=peso_prova, peso_trabalho=peso_trabalho) }}" method="POST">
             {% for i in range(quantidade_prova) %}
-            <div class="mb-3">
+            <div class="mb-8">
                 <label for="prova{{i}}" class="form-label">P{{i+1}}</label>
                 <input type="number" class="form-control" name="input_prova{{i}}" id="prova{{i}}">
             </div>
             {% endfor %}
             {% for i in range(quantidade_trabalho) %}
-            <div class="mb-3">
+            <div class="mb-8">
                 <label for="trabalho{{i}}" class="form-label">T{{i+1}}</label>
                 <input type="number" class="form-control" name="input_trabalho{{i}}" id="trabalho{{i}}">
             </div>
             {% endfor %}
-            <div class="mb-3">
-                <p class="mb-2">Quer fazer Psub?</p>
+            <div class="mb-8">
+                <p class="mb-6">Quer fazer Psub?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="psub" id="com_psub" value="com_psub">
                     <label class="form-check-label" for="com_psub">Sim</label>
@@ -45,12 +49,11 @@
                     <label class="form-check-label" for="sem_psub">Não</label>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary mb-8" type="submit">
                 <img src="{{ url_for('static', filename='IMG/minimo-esforco.png') }}" alt="Ícone Mínimo Esforço"
                     style="width: 1em; height: 1em;"> Mínimo Esforço
             </button>
         </form>
     </div>
-    <footer class="mt-5">
-        <p>© Instituto Mauá de Tecnologia, 2023 - Todos os direitos reservados.</p>
-    </footer>
+    <footer>
+

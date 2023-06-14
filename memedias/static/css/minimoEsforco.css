@@ -1,0 +1,76 @@
+/* inicio de header */
+header.top{
+    display: block;
+    padding: 5px;
+    border: solid #004684 1px;
+    background-color:#004684;
+}
+header.top > img#logo{
+    display: inline;
+    width: 172px;
+    height: 80px;
+    padding: 1px;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+/* fim de header */
+
+        /* inicio do body */
+
+        h1 {
+            text-align: center;
+        }
+
+        .engradado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: black 3px solid;
+            border-radius: 15px;
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 500px;
+        }
+
+        .engradado-p {
+            margin-top: 0;
+        }
+
+        .engradado-nota {
+            border: black 3px solid;
+            border-radius: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 18px;
+        }
+
+        /* fim do body */
+
+        /* inicio logo mmedias */
+
+        #logo-mmedias {
+            width: 160px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        /* fim logo mmedias */
+
+@media(max-width: 280px){
+    body{
+        font-size:smaller;
+        word-break: break-all;
+    }
+    
+    header.top > img#logo{
+        width: 60%;
+        height: 60%;   
+    }
+    div#dadosPessoais > div > div > p#RA, #dadosPessoais > div > div > p#GTL, #dadosPessoais > div > div > p#nome, #dadosPessoais > div > div > p#email, #dadosPessoais > div > div > p#celular, .dados{
+        word-break: break-all; 
+    }
+
+}
