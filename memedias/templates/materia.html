@@ -25,12 +25,17 @@
                 Mínimo Esforço
             </button>
         </div>
+        <p>Peso Prova: {{peso_prova}}</p>
+        <p>Peso Trabalho: {{peso_trabalho}}</p>
         <div>
             {% for i in range(quantidade_prova) %}
             <p>P{{ i+1 }}</p>
             <input type="text" name="input{{ i }}" id="input{{ i }}">
             {% endfor %}
         </div>
+        <p>Quer fazer Psub?</p>
+        <input type="radio" name="psub" value="com_psub">Sim<br>
+        <input type="radio" name="psub" value="sem_psub">Não<br>
         <div>
             {% for i in range(quantidade_trabalho) %}
             <p>T{{ i+1 }}</p>

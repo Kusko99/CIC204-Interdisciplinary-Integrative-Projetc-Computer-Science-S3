@@ -136,4 +136,3 @@ def get_id_materia_nome(nome_materia):
     db_connection.close()
 
     return resultado[0][0]
-

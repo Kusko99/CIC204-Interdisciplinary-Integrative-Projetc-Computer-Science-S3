@@ -25,6 +25,9 @@ def info_materia(nome_materia):
 
     return render_template('materia.html', nome_materia=nome_materia, peso_prova = peso_prova, peso_trabalho = peso_trabalho,quantidade_trabalho = quantidade_trabalho,quantidade_prova = quantidade_prova)
 
+@app.route("/minimo_esforco")
+def minimo_esforco():
+    return ''
 if __name__ == '__main__':
     app.run(debug=True)
 
