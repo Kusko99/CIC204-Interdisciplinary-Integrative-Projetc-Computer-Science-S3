@@ -94,23 +94,25 @@ def descenders(ESC, limParametros, Psub, QuantidadeTrabalhos, PesoProva, PesoTra
     #         np.savetxt(f'Pop_gen_{count_gen}.txt', [list(vars(x).values())[1:] for x in SPE], delimiter=';')
 
 def Merit(Notas, Psub, QuantidadeTrabalhos, PesoProva, PesoTrabalho):
-    if QuantidadeTrabalhos  == 0:
-        QuantidadeTrabalhos =1
+    if int(QuantidadeTrabalhos)  == 0:
+        QuantidadeTrabalho =1
+    else:
+        QuantidadeTrabalho = int(QuantidadeTrabalhos)
     if Psub == "com_psub":
         if Notas.Psub > Notas.P1 and Notas.Psub <= Notas.P2:
-            media = float(PesoProva)*((Notas.Psub + Notas.P2)/2) + float(PesoTrabalho)*((Notas.T1+Notas.T2)/int(QuantidadeTrabalhos))
+            media = PesoProva*((Notas.Psub + Notas.P2)/2) + PesoTrabalho*((Notas.T1+Notas.T2)/QuantidadeTrabalho)
 
         if Notas.Psub <= Notas.P1 and Notas.Psub > Notas.P2:
-            media = float(PesoProva)*((Notas.P1 + Notas.Psub)/2) + float(PesoTrabalho)*((Notas.T1+Notas.T2)/int(QuantidadeTrabalhos))
+            media = PesoProva*((Notas.P1 + Notas.Psub)/2) + PesoTrabalho*((Notas.T1+Notas.T2)/QuantidadeTrabalho)
 
         if Notas.Psub > Notas.P1 and Notas.Psub > Notas.P2:
-            media = float(PesoProva)*(Notas.Psub) + float(PesoTrabalho)*((Notas.T1+Notas.T2)/3)
+            media = PesoProva*(Notas.Psub) + PesoTrabalho*((Notas.T1+Notas.T2)/3)
         
         if Notas.Psub <= Notas.P1 and Notas.Psub <= Notas.P2:
             media = 0
     
     else:
-        media = float(PesoProva)*((Notas.P1 + Notas.P2)/2) + float(PesoTrabalho)*((Notas.T1+Notas.T2)/int(QuantidadeTrabalhos))
+        media = PesoProva*((Notas.P1 + Notas.P2)/2) + PesoTrabalho*((Notas.T1+Notas.T2)/QuantidadeTrabalho)
 
     if media < 6:
         # Media muito baixa

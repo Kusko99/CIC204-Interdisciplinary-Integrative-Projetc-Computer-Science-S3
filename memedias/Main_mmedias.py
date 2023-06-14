@@ -42,6 +42,9 @@ import os
 
 def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psub, PesoProva, PesoTrabalho):
 
+    PesoProvaCerto = float(PesoProva)/100
+    PesoTrabalhoCerto = float(PesoTrabalho)/100
+
     limParametros = {
         "Provas": 
                     {"P1":              [0,     10],
@@ -106,7 +109,7 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
                 Vpop[i][j] = Funcoes.valor_param(limParametros[i][j])
         NotasVpop = Notas.notas(Vpop)
         #Calculando o Mérito
-        Merito, flag = Funcoes.Merit(NotasVpop, Psub, QuantidadeTrabalhos, PesoProva, PesoTrabalho) 
+        Merito, flag = Funcoes.Merit(NotasVpop, Psub, QuantidadeTrabalhos, PesoProvaCerto, PesoTrabalhoCerto) 
         if flag == 0:
             NotasVpop.merito = Merito
             SPE.append(NotasVpop)
@@ -146,7 +149,7 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
         #Matriz dos escolhidos
         ESC = Funcoes.selecters(BST, SAV)
         #Montagem dos descendentes
-        DES, flagsPop = Funcoes.descenders(ESC, limParametros, Psub, QuantidadeTrabalhos, PesoProva, PesoTrabalho)
+        DES, flagsPop = Funcoes.descenders(ESC, limParametros, Psub, QuantidadeTrabalhos, PesoProvaCerto, PesoTrabalhoCerto)
         #Montando a nova matriz de população
         SPE = Funcoes.selecters(ESC, DES) 
         #Classificando a geração pelo Mérito
@@ -158,10 +161,9 @@ def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psu
         # Funcoes.displayar(SPE, count_gen, flagsPop)
 
     Final_Time = time.time()
-    if tempo - Init_Time<6:
-        
-        return {"P1": SPE[0].P1, "P2": SPE[0].P2, "Psub":SPE[0].Psub, "T1": SPE[0].T1, "T2": SPE[0].T2}
+
+    return {"P1": SPE[0].P1, "P2": SPE[0].P2, "Psub":SPE[0].Psub, "T1": SPE[0].T1, "T2": SPE[0].T2}
 
 if __name__ == "__main__":
-    u_i = CalcME(["", ""], ["4"], "2", "1", "sem_psub", "1", "0")
+    u_i = CalcME(["", ""], [], "2", "0", "sem_psub", "100", "0")
     print(u_i)
