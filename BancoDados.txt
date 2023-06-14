@@ -1,6 +1,7 @@
 CREATE DATABASE db_MauaNet;
 USE db_MauaNet;
 
+
 /* Lógico_1: */
 
 CREATE TABLE Aluno_Boletim (
@@ -27,7 +28,9 @@ CREATE TABLE Materia (
     Nome VARCHAR(50),
     Id_Materia CHAR(06) PRIMARY KEY UNIQUE,
     Peso_Prova INTEGER,
-    Peso_Trabalho INTEGER
+    Peso_Trabalho INTEGER,
+    Quantidade_Prova INTEGER,
+    Quantidade_Trabalho INTEGER
 );
 
 CREATE TABLE Professor (
@@ -111,15 +114,16 @@ VALUES
 	('0101021203','01','01','02','12','03','19.00358-3'),
 	('0102041601','01','02','04','16','01','22.04569-0');
 
-INSERT INTO Materia (Nome, Id_Materia, Peso_Prova, Peso_Trabalho)
+INSERT INTO Materia (Nome, Id_Materia, Peso_Prova, Peso_Trabalho, Quantidade_Prova, Quantidade_Trabalho)
 VALUES
-	('Calculo para Ciencia da Computação','cic201','60','40'),
-    ('Física e Modelagem Computacional', 'cic202', '60','40'),
-    ('Algoritmos, Estrutura de Dados e Programação','cic203','50','50'),
-    ('Paradigmas e Linguagens de Programação','tti201','90','10'),
-    ('Desenvolvimento Ágil','tti202','50','50'),
-	('eletronica analogica','ete202','70','30'),
-	('design e conhecimento','dsg142','50','50');
+    ('Calculo para Ciencia da Computação', 'cic201', 60, 40, 2, 2),
+    ('Física e Modelagem Computacional', 'cic202', 60, 40, 2, 1),
+    ('Algoritmos, Estrutura de Dados e Programação', 'cic203', 50, 50, 2, 2),
+    ('Paradigmas e Linguagens de Programação', 'tti201', 90, 10, 2, 0),
+    ('Desenvolvimento Ágil', 'tti202', 50, 50, 2, 2),
+    ('eletronica analogica', 'ete202', 70, 30, 4, 3),
+    ('design e conhecimento', 'dsg142', 50, 50, 2, 5);
+
 
 INSERT INTO Professor (RF,Nome)
 VALUES
