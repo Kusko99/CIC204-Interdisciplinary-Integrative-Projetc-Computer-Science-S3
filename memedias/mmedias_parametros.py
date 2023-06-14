@@ -2,7 +2,7 @@ from random import randint
 from random import uniform
 
 pop       = 200     #Tamanho da População da Geração
-gentot    = 1000    #Número de Gerações que serão analisadas
+gentot    = 100    #Número de Gerações que serão analisadas
 maximizar = 0       # 0 se você for minimizar o mérito e 1 se for maximizar
 FraSel    = 0.30    #Fração de Seleção da Geração
 FraCom    = 0.10    #Fração de Complascência da Geração

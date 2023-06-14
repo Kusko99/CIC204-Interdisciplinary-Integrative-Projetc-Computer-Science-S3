@@ -40,124 +40,129 @@ import mmedias_func as Funcoes
 import Notas
 import os
 
+def CalcME(NotasProva, NotasTrabalho, QuantidadeProvas, QuantidadeTrabalhos, Psub, PesoProva, PesoTrabalho):
 
-pesos = Funcoes.Pesos()
+    limParametros = {
+        "Provas": 
+                    {"P1":              [0,     10],
+                    "P2":              [0,     10],
+                    "Psub":            [0,     10]}, 
+        "Trabalhos": 
+                    {"T1":              [0,   10],
+                    "T2":              [0,   10]}
+    }
 
-limParametros = {
-    "Provas": 
-                {"P1":              [0,     10],
-                 "P2":              [0,     10],
-                 "Psub":            [0,     10]}, 
-    "Trabalhos": 
-                {"T1":              [0,   10],
-                 "T2":              [0,   10],
-                 "T3":              [0,   10]}
-}
-l_a = {"Provas":{},"Trabalhos":{}}
-l_a["Provas"]["P1"] = input('P1')
-l_a["Provas"]["P2"] = input('P2')
-l_a["Trabalhos"]["T1"] = input('T1')
-l_a["Trabalhos"]["T2"] = input('T2')
-l_a["Trabalhos"]["T3"] = input('T3')
-
-for i in l_a:
-    for j in l_a[i]:
-        if l_a[i][j] != '':
-            l_a[i][j] = int(l_a[i][j])
-            limParametros[i][j][0] = l_a[i][j]
-            limParametros[i][j][1] = l_a[i][j]
-
-
-# Tempo de referência do inicio do processamento
-Init_Time = time.time()
-
-# Montando a primeira geração
-count_gen = 1
-count_pop = 0
-SPE = []
-tempo = time.time()
-flagsPop = [0]*(len(Parametros.flags)+1)
-
-n=0
-while count_pop < (Parametros.pop):
-    if tempo - Init_Time >= 6:
-        count_gen = Parametros.gentot
-        if pesos[2] == "S":
-            print("Não tem salvação")
-        else:
-            print("Vai de sub")
-        break
-    Vpop = {}
-    # Atribuindo valores aleatórios aos parâmetros de projeto
-    # npar = 0
-    # while npar != Parametros.Nparam:
-    #     Vpop[npar] = Funcoes.valor_param(Parametros.LimParamMin[npar], Parametros.LimParamMax[npar])
-    #     npar = npar + 1
-    for i in limParametros:
-        Vpop[i] = {}
-        for j in limParametros[i]:
-            Vpop[i][j] = Funcoes.valor_param(limParametros[i][j])
-    NotasVpop = Notas.notas(Vpop)
-    #Calculando o Mérito
-    Merito, flag = Funcoes.Merit(NotasVpop,pesos) 
-    if flag == 0:
-        NotasVpop.merito = Merito
-        SPE.append(NotasVpop)
-        count_pop = count_pop + 1
+    if NotasProva[0] != "":
+        limParametros["Provas"]["P1"][0] = int(NotasProva[0])
+        limParametros["Provas"]["P1"][1] = int(NotasProva[0])
+    if NotasProva[1] != "":
+        limParametros["Provas"]["P2"][0] = int(NotasProva[1])
+        limParametros["Provas"]["P2"][1] = int(NotasProva[1])
+    print(len(NotasTrabalho))
+    if len(NotasTrabalho) != 0:
+        if NotasTrabalho[0] != "":
+            limParametros["Trabalhos"]["T1"][0] = int(NotasTrabalho[0])
+            limParametros["Trabalhos"]["T1"][1] = int(NotasTrabalho[0])
+        if NotasTrabalho[1] != "":
+            limParametros["Trabalhos"]["T2"][0] = int(NotasTrabalho[1])
+            limParametros["Trabalhos"]["T2"][1] = int(NotasTrabalho[1])
     else:
-        # print(count_pop, "Aviões")
-        # print(flag)
-        flagsPop[flag] += 1
-        tempo = time.time()
-        
+            limParametros["Trabalhos"]["T1"][0] = 0
+            limParametros["Trabalhos"]["T1"][1] = 0
+            limParametros["Trabalhos"]["T2"][0] = 0
+            limParametros["Trabalhos"]["T2"][1] = 0
 
-        # if flag == 1:
-        #     print("Erro 1")
-            # Funcoes.displayar([[AviaoVpop.dicionario, 0]], count_gen, flagsPop)
-    n += 1
-    #Avançando no contador da população
+    # Tempo de referência do inicio do processamento
+    Init_Time = time.time()
 
-#Classificando a primeira geração pelo Mérito
-SPE = np.array(SPE)
-print("Tudo certo chefia")
+    # Montando a primeira geração
+    count_gen = 1
+    count_pop = 0
+    SPE = []
+    tempo = time.time()
+    flagsPop = [0]*(len(Parametros.flags)+1)
 
-SPE = sorted(SPE, key=lambda x: x.merito, reverse=Parametros.maximizar)
+    n=0
+    while count_pop < (Parametros.pop):
+        if tempo - Init_Time >= 6:
+            count_gen = Parametros.gentot
+            if Psub == "com_psub":
+                print("Não tem salvação")
+            else:
+                print("Vai de sub")
+            break
+        Vpop = {}
+        # Atribuindo valores aleatórios aos parâmetros de projeto
+        # npar = 0
+        # while npar != Parametros.Nparam:
+        #     Vpop[npar] = Funcoes.valor_param(Parametros.LimParamMin[npar], Parametros.LimParamMax[npar])
+        #     npar = npar + 1
+        for i in limParametros:
+            Vpop[i] = {}
+            for j in limParametros[i]:
+                Vpop[i][j] = Funcoes.valor_param(limParametros[i][j])
+        NotasVpop = Notas.notas(Vpop)
+        #Calculando o Mérito
+        Merito, flag = Funcoes.Merit(NotasVpop, Psub, QuantidadeTrabalhos, PesoProva, PesoTrabalho) 
+        if flag == 0:
+            NotasVpop.merito = Merito
+            SPE.append(NotasVpop)
+            count_pop = count_pop + 1
+        else:
+            # print(count_pop, "Aviões")
+            # print(flag)
+            flagsPop[flag] += 1
+            tempo = time.time()
+            
 
-# Matriz final da primeira população e seu armazenamento
-# Funcoes.salvapop(SPE, count_gen)
+            # if flag == 1:
+            #     print("Erro 1")
+                # Funcoes.displayar([[AviaoVpop.dicionario, 0]], count_gen, flagsPop)
+        n += 1
+        #Avançando no contador da população
 
-
-# Iniciando O laço de Loop das gerações
-while count_gen != (Parametros.gentot):
-
-    #Avançando para a próxima geração
-    count_gen = count_gen + 1
-    #Selecionando os melhores
-    BST = Funcoes.besters(SPE)
-    #Salvando pela Complascência
-    SAV = Funcoes.savers(SPE)
-    #Matriz dos escolhidos
-    ESC = Funcoes.selecters(BST, SAV)
-    #Montagem dos descendentes
-    DES, flagsPop = Funcoes.descenders(ESC, pesos, limParametros)
-    #Montando a nova matriz de população
-    SPE = Funcoes.selecters(ESC, DES) 
-    #Classificando a geração pelo Mérito
+    #Classificando a primeira geração pelo Mérito
     SPE = np.array(SPE)
-    SPE = sorted(SPE, key=lambda x: x.merito, reverse=Parametros.maximizar)
-    # #Armazenando a matriz de população
-    # Funcoes.salvapop(SPE, count_gen)
-    # # Mostrando Resultados Parciais
-    # Funcoes.displayar(SPE, count_gen, flagsPop)
+    print("Tudo certo chefia")
 
-Final_Time = time.time()
-Process_Time = Final_Time - Init_Time
-print ("Tempo de Processamento: %.2f s" % Process_Time)
-if tempo - Init_Time<6:
-    print(SPE[0].P1)
-    print(SPE[0].P2)
-    print(SPE[0].T1)
-    print(SPE[0].T2)
-    print(SPE[0].T3)
-    print(SPE[0].Psub)
-    print(SPE[0].merito)
+    SPE = sorted(SPE, key=lambda x: x.merito, reverse=Parametros.maximizar)
+
+    # Matriz final da primeira população e seu armazenamento
+    # Funcoes.salvapop(SPE, count_gen)
+
+
+    # Iniciando O laço de Loop das gerações
+    while count_gen != (Parametros.gentot):
+
+        #Avançando para a próxima geração
+        count_gen = count_gen + 1
+        #Selecionando os melhores
+        BST = Funcoes.besters(SPE)
+        #Salvando pela Complascência
+        SAV = Funcoes.savers(SPE)
+        #Matriz dos escolhidos
+        ESC = Funcoes.selecters(BST, SAV)
+        #Montagem dos descendentes
+        DES, flagsPop = Funcoes.descenders(ESC, limParametros, Psub, QuantidadeTrabalhos, PesoProva, PesoTrabalho)
+        #Montando a nova matriz de população
+        SPE = Funcoes.selecters(ESC, DES) 
+        #Classificando a geração pelo Mérito
+        SPE = np.array(SPE)
+        SPE = sorted(SPE, key=lambda x: x.merito, reverse=Parametros.maximizar)
+        # #Armazenando a matriz de população
+        # Funcoes.salvapop(SPE, count_gen)
+        # # Mostrando Resultados Parciais
+        # Funcoes.displayar(SPE, count_gen, flagsPop)
+
+    Final_Time = time.time()
+    if tempo - Init_Time<6:
+        return SPE[0]
+
+if __name__ == "__main__":
+    ui = CalcME(["", ""], [], "2", "2", "sem_psub", "1", "0")
+    print(ui.P1)
+    print(ui.P2)
+    print(ui.Psub)
+    print(ui.T1)
+    print(ui.T2)
+    

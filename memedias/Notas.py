@@ -14,5 +14,3 @@ class notas:
             self.T1 = dicionarioNotas["Trabalhos"]["T1"]
 
             self.T2 = dicionarioNotas["Trabalhos"]["T2"]
-
-            self.T3 = dicionarioNotas["Trabalhos"]["T3"]
