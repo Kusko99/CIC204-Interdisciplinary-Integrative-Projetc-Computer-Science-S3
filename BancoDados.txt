@@ -75,11 +75,11 @@ CREATE TABLE Nota (
     Peso_Nota INTEGER,
     Ra CHAR(10),
     id_Materia CHAR(06),
-    PRIMARY KEY (Ra, id_Materia),
-    UNIQUE (Ra, id_Materia),
     FOREIGN KEY (Ra) REFERENCES Aluno_Boletim(Ra),
     FOREIGN KEY (id_Materia) REFERENCES Materia(Id_Materia)
 );
+
+drop table Nota;
 
 CREATE TABLE Aula (
     Dia VARCHAR(20),
@@ -178,3 +178,54 @@ VALUES
 	('029345','19.00468-0'),
 	('948363','19.00358-3'),
 	('456832','22.04569-0');
+
+INSERT INTO Aluno_Boletim (Ra, Nome, Email, Senha, Coeficiente_De_Redimento) 
+VALUES 
+	('19.00468-9', 'eu', '123', '123','8');
+    
+INSERT INTO GTL (GTL, Grupo, Turma, Lab, Curso, Serie, Ra)
+VALUES
+	('0101011303','01','01','01','13','02','19.00468-9');
+    
+INSERT INTO Nota (valor,tipo,cardinalidade,Peso_Nota,Ra,id_Materia)
+VALUES
+	('6','prova','02',1,'19.00468-0','cic201'),
+    ('5','prova','02',1,'19.00468-0','cic201'),
+    ('8','prova','02',1,'19.00468-0','cic201'),
+    ('3','prova','02',1,'19.00468-0','cic202'),
+    ('6','prova','02',1,'19.00468-0','cic202'),
+    ('8','prova','02',1,'19.00468-0','cic203'),
+    ('8','prova','02',1,'19.00468-0','cic203'),
+    ('2','prova','02',1,'19.00468-0','cic203'),
+    ('4','prova','02',1,'19.00468-0','tti201'),
+    ('6','prova','02',1,'19.00468-0','tti201'),
+    ('7','prova','02',1,'19.00468-0','tti201'),
+    ('3','prova','02',1,'19.00468-0','tti202'),
+    ('8','prova','02',1,'19.00468-0','tti202'),
+    ('3','prova','02',1,'19.00468-0','tti202'),
+    ('9','prova','02',1,'19.00468-0','ete202'),
+    ('4','prova','02',1,'19.00468-0','ete202'),
+    ('9','prova','02',1,'19.00468-0','ete202'),
+    ('3','prova','02',1,'19.00468-0','dsg142'),
+    ('7','prova','02',1,'19.00468-0','dsg142'),
+    ('8','prova','02',1,'19.00468-0','dsg142'),
+    ('6','trabalho','02',1,'19.00468-0','cic201'),
+    ('5','trabalho','02',1,'19.00468-0','cic201'),
+    ('8','trabalho','02',1,'19.00468-0','cic201'),
+    ('3','trabalho','02',1,'19.00468-0','cic202'),
+    ('6','trabalho','02',1,'19.00468-0','cic202'),
+    ('8','trabalho','02',1,'19.00468-0','cic203'),
+    ('8','trabalho','02',1,'19.00468-0','cic203'),
+    ('2','trabalho','02',1,'19.00468-0','cic203'),
+    ('4','trabalho','02',1,'19.00468-0','tti201'),
+    ('6','trabalho','02',1,'19.00468-0','tti201'),
+    ('7','trabalho','02',1,'19.00468-0','tti201'),
+    ('3','trabalho','02',1,'19.00468-0','tti202'),
+    ('8','trabalho','02',1,'19.00468-0','tti202'),
+    ('3','trabalho','02',1,'19.00468-0','tti202'),
+    ('9','trabalho','02',1,'19.00468-0','ete202'),
+    ('4','trabalho','02',1,'19.00468-0','ete202'),
+    ('9','trabalho','02',1,'19.00468-0','ete202'),
+    ('3','trabalho','02',1,'19.00468-0','dsg142'),
+    ('7','trabalho','02',1,'19.00468-0','dsg142'),
+    ('8','trabalho','02',1,'19.00468-0','dsg142')
