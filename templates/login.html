@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="images/MAUA.jpeg" media="all" rel="stylesheet">
     <title>MAUAnet 3.0</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link href="{{ url_for('static', filename='CSS/loginStyles.css' )}}" rel="stylesheet" type="text/css" />
+    <link href="static/CSS/MAUA.jpeg" media="all" rel="stylesheet">
     <!-- <script src='https://www.google.com/recaptcha/api.js'></script>  -->
     
 </head>
@@ -18,7 +18,12 @@
     <header class="top">
         <img src="{{ url_for('static', filename='IMG/images/logo-IMT-branco.png') }}" alt="Logo Mauá Branco">
     </header>
-
+    <style>
+        body {
+            background-image: url("static/CSS/MAUA.jpeg");
+            /* Outras propriedades de estilo para o body */
+        }
+    </style>
     <article class="entrar">
         <section>
             <h1>MAUA NET</h1>

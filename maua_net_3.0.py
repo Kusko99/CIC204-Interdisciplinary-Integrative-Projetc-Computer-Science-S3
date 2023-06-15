@@ -34,8 +34,15 @@ def boletim():
     nome = session.get('nome')
     ra = session.get('ra')
     gtl = session.get('gtl')
-    resul3 = ConecaoDB.conexaoDB_Notas(ra)
     return redirect(url_for('mostrar_nome2', email=email, nome=nome, ra=ra, gtl=gtl))
+
+@app.route("/horarios")
+def horarios():
+    email = session.get('email')
+    nome = session.get('nome')
+    ra = session.get('ra')
+    gtl = session.get('gtl')
+    return redirect(url_for('mostrar_nome3', email=email, nome=nome, ra=ra, gtl=gtl))
 
 @app.route('/autenticar', methods=['POST'])
 def autenticar():
@@ -65,6 +72,10 @@ def mostrar_nome(email,nome,ra,gtl):
 @app.route('/mostrar_nome2/<email>/<nome>/<ra>/<gtl>')
 def mostrar_nome2(email,nome,ra,gtl):
     return render_template('boletim.html', email=email, nome=nome, ra=ra, gtl=gtl)
+
+@app.route('/mostrar_nome3/<email>/<nome>/<ra>/<gtl>')
+def mostrar_nome3(email,nome,ra,gtl):
+    return render_template('horarios.html', email=email, nome=nome, ra=ra, gtl=gtl)
 
 @app.route('/processar', methods=['POST'])
 def processar():

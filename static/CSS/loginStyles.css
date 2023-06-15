@@ -2,7 +2,7 @@ body{
     font-family: "Montserrat", Arial, Helvetica, sans-serif, sans-serif;
     font-size: medium;
     margin: 0px;
-    background-image: url(../images/MAUA.jpeg);
+    background-image: url("static/CSS/MAUA.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

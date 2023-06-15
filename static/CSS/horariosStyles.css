@@ -1,0 +1,256 @@
+body {
+    font-family: "Montserrat", 'Times New Roman', Times, serif, Helvetica, sans-serif, sans-serif;
+    font-size: medium;
+    margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: none;
+    background-color: #E6E6E6;
+}
+
+/* inicio de header */
+header.top {
+    display: block;
+    padding: 5px;
+    border: solid #004684 1px;
+    background-color: #004684;
+}
+
+header.top>img#logo {
+    display: inline;
+    width: 172px;
+    height: 80px;
+    padding: 1px;
+    margin: 10px;
+    vertical-align: middle;
+}
+
+/* fim de header */
+
+
+h1#horarios {
+    display: block;
+    color: #004684;
+    font-size: xx-large;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div#dadosPessoais>div {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+
+}
+
+div#dadosPessoais>div>div {
+    display: table-row;
+    text-align: left;
+    margin: 5px;
+    text-align: center;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+div#dadosPessoais>div>div>p {
+    display: table-cell;
+    font-size: medium;
+    font-weight: lighter;
+    padding: 10px;
+    text-align: left;
+}
+
+div#dadosPessoais>div>div>p.dados {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+div.container>a#voltar {
+    display: inline-block;
+    font-size: medium;
+    text-align: center;
+    background-color: #004684;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin: 5px;
+    background-color: rgb(80, 80, 80);
+    width: 160px;
+
+}
+
+a#voltar:hover {
+    filter: brightness(170%);
+    color: #E6E6E6;
+    /* border: 1px solid #004684; */
+    box-shadow: 1px 1px 1px black;
+    text-shadow: none;
+}
+
+.container {
+    text-align: center;
+}
+
+
+div#horarios {
+    margin-top: 10px;
+    
+    overflow-x: auto;
+    text-align: center;
+}
+
+div#horarios>table {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+
+table {
+    text-align: center;
+    background-color: #ffffff;
+    border-collapse: collapse;
+}
+
+tr,
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #00468423;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* inicio de footer */
+footer {
+    font-size: medium;
+    background-color: #004684;
+    width: auto;
+    color: #E6E6E6;
+    text-align: center;
+    margin-top: auto;
+}
+
+
+/* fim de footer */
+
+
+
+
+@media (max-width: 576px) {
+    body {
+        font-size: smaller;
+
+    }
+
+    border {
+        min-height: auto;
+    }
+
+    /* inicio de header */
+    header.top>img#logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* fim de header */
+
+
+
+    div#dadosPessoais>div,
+    div#dadosPessoais>div>div {
+        display: block;
+    }
+
+    div#dadosPessoais {
+        display: block;
+        /* border: 1px solid red; */
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    div#dadosPessoais>div>div>p {
+        display: block;
+        margin: 5px;
+        text-align: center;
+        margin-top: 0px;
+        font-weight: bold;
+        font-size: medium;
+        background-color: transparent;
+        padding: 0px;
+        border: none;
+        color: black;
+    }
+
+    div#dadosPessoais>div>div>p.dados {
+        margin-bottom: 0px;
+    }
+
+    div#dadosPessoais>div>div>p#RA,
+    div#dadosPessoais>div>div>p#curso,
+    #dadosPessoais>div>div>p#GTL,
+    #dadosPessoais>div>div>p#nome,
+    #dadosPessoais>div>div>p#email,
+    #dadosPessoais>div>div>p#celular {
+        padding-left: 10%;
+        padding-right: 10%;
+        font-size: medium;
+        font-weight: lighter;
+        word-break: break-all;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* inicio de footer */
+    footer {
+        display: block;
+        font-size: small;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto;
+
+    }
+}

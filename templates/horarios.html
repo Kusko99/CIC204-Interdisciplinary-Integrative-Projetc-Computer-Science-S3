@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAUAnet 3.0 - Horarios</title>
+    <link href="{{ url_for('static', filename='CSS/horariosStyles.css' )}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+
+<body>
+    <header class="top">
+        <img src="{{ url_for('static', filename='IMG/images/logo-IMT-branco.png') }}" alt="Logo Mauá Branco">
+    </header>
+    <article>
+        <h1 id="horarios">HORÁRIOS</h1>
+        <div id="dadosPessoais">
+            <div>
+                <div>
+                    <p class="dados">Nome:</p>
+                    <p id="nome">{{nome}}</p>
+                </div>
+                <div>
+                    <p class="dados">Curso:</p>
+                    <p id="curso">CIC</p>
+                </div>
+                <div>
+                    <p class="dados">E-mail:</p>
+                    <p id="email">{{email}}</p>
+                </div>
+                <div>
+                    <p class="dados">RA:</p>
+                    <p id="RA">{{ra}}</p>
+                </div>
+                <div>
+                    <p class="dados">Grupo/Turma/Lab:</p>
+                    <p id="GTL">{{gtl[0:2]}}/{{gtl[2:4]}}/{{gtl[4:6]}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a id="voltar" href="{{ url_for('home2') }}">Sair</a>
+        </div>
+
+        <div id="horarios">
+            <table>
+                <tr>
+                    <th>CRONOGRAMA</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                </tr>
+                <tr>
+                    <th>07h40 - 09h20</th>
+                    <td>CIC203 - Algoritmos, Estrutura de Dados e Prog. / Andreia Machion - LAB - H333</td>
+                    <td>CIC201 - Cálculo para Ciência da Computação / Maria Mancini - TEO - H105</td>
+                    <td>TI202 - Desenvolvimento Ágil / Flavia Beo - LAB - H209</td>
+                    <td></td>
+                    <td>CIC203 - Algoritmos, Estrutura de Dados e Prog. / Andreia Machion - TEO - H203</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>09h30 - 11h10</th>
+                    <td>CIC203 - Algoritmos, Estrutura de Dados e Prog. / Andreia Machion - LAB - H333</td>
+                    <td>CIC201 - Cálculo para Ciência da Computação / Maria Mancini - EXE - H333</td>
+                    <td>TTI201 - Paradigmas e Linguagens de Programação / Igor Silveira - TEO - H203</td>
+                    <td>CIC202 - Física e Modelagem Computacional / Sandro Martini - TEO - H102</td>
+                    <td>CIC204 - Proj Integr Interdisciplinar - Ciência da Comp. / Alexsander Carvalho - LAB - H333</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>09h30 - 11h10</th>
+                    <td>CIC203 - Algoritmos, Estrutura de Dados e Prog. / Andreia Machion - LAB - H333</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>CIC202 - Física e Modelagem Computacional / Sandro Martini - LAB - H209</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>11h20 - 13h00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>13h10 - 14h50</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>15h00 - 16h40</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>16h50 - 18h30</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>18h30 - 19h20</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>19h20 - 20h10</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+
+            </table>
+
+        </div>
+
+
+
+    </article>
+    <footer>
+        <p>
+            © Instituto Mauá de Tecnologia, 2023 - Todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+
+</html>
