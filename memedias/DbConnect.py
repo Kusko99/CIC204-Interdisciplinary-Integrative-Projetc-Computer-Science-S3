@@ -1,8 +1,9 @@
 from mysql.connector import connection
 
-host = 'localhost'
-user = 'root'
-password = 'portuguesa1'
+
+host ='localhost'
+user ='user'
+password = 'password'
 database = 'db_MauaNet'
 
 def get_GTL_aluno(ra):
