@@ -1,29 +1,31 @@
 # MauaNet3.0-and-MMedias
 
-### Para Rodar o projeto
+## To Run the Project
 
-* É necessário fazer o donwload do pacote Flask para o Python
+1. Download the Flask package for Python:
 
-```
-pip install flask
-```
+    ```bash
+    pip install flask
+    ```
 
-* Os arquivos HTML devem ficar na pasta templates
-* Os arquvios de Imagem e CSS devem ficar na pasta static
+2. Place HTML files in the `templates` folder.
+3. Place image and CSS files in the `static` folder.
 
-### Protótipos de Telas
+## Screen Prototypes
 
-link do figma:
-https://www.figma.com/file/dg7iz5vsfisnCts2MVkxGi/Untitled?type=design&node-id=8-33&t=rHGeLA4N3TakRjfx-0
+[Figma Link](https://www.figma.com/file/dg7iz5vsfisnCts2MVkxGi/Untitled?type=design&node-id=8-33&t=rHGeLA4N3TakRjfx-0)
 
-### Banco de Dados
+## Database
 
-* Para rodar o banco de dados, faça o donwload do MySql Workbench, copie o codigo que está no arquivo BancoDeDados.txt e rode em seu banco de dados
+1. To run the database, download MySql Workbench.
+2. Copy the code from the `BancoDeDados.txt` file.
+3. Run the code in your database.
 
-### Time de Desenvolvimento
-* Fernando Freitas de Oliveira
-* Lucas Thiago Mezadri Machado
-* Gabriel Gonçalves Renault Cunha
-* Bruno Kenji Teruya
-* Lucas Machado da Costa Pennone
-* Gustavo Yudji Hiromoto
+## Development Team
+
+- Fernando Freitas de Oliveira
+- Lucas Thiago Mezadri Machado
+- Gabriel Gonçalves Renault Cunha
+- Bruno Kenji Teruya
+- Lucas Machado da Costa Pennone
+- Gustavo Yudji Hiromoto
