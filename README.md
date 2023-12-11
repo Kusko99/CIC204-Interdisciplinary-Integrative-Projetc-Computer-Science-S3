@@ -23,6 +23,7 @@ https://www.figma.com/file/dg7iz5vsfisnCts2MVkxGi/Untitled?type=design&node-id=8
 ### Time de Desenvolvimento
 * Fernando Freitas de Oliveira
 * Lucas Thiago Mezadri Machado
-* Gabriel Gonçalves Cunha Renault
-* Bruno Teruya
-* 
+* Gabriel Gonçalves Renault Cunha
+* Bruno Kenji Teruya
+* Lucas Machado da Costa Pennone
+* Gustavo Yudji Hiromoto
